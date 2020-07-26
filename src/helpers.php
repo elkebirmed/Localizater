@@ -2,8 +2,7 @@
 
 use Getsupercode\Localizater\Facades\Localizater;
 
-if (!function_exists('locale_route')) {
-
+if (! function_exists('locale_route')) {
     /**
      * Get locale route URL/URI.
      *
@@ -19,8 +18,7 @@ if (!function_exists('locale_route')) {
     }
 }
 
-if (!function_exists('locale_name')) {
-
+if (! function_exists('locale_name')) {
     /**
      * Get locale language name.
      *

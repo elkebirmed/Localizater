@@ -2,7 +2,6 @@
 
 namespace Getsupercode\Localizater;
 
-use Closure;
 use Illuminate\Support\Facades\App;
 use Illuminate\Support\Facades\Config;
 use Illuminate\Support\Facades\Request;
@@ -103,7 +102,7 @@ class Localizater
         $segments = explode('/', $parse_url);
 
         // If this is welcome page add the default locale as a segment
-        if (!$parse_url) {
+        if (! $parse_url) {
             $segments[1] = $this->locale;
         }
 
@@ -113,23 +112,23 @@ class Localizater
         }
 
         // Change the locale prefix
-        if ($this->locale == $locale && !$this->prefixDefaultName) {
+        if ($this->locale == $locale && ! $this->prefixDefaultName) {
             array_splice($segments, 1, 0);
         } else {
             array_splice($segments, 1, 0, $locale);
         }
 
         // Make route
-        $url = '/' . implode('/', array_values(array_filter($segments)));
+        $url = '/'.implode('/', array_values(array_filter($segments)));
 
         // Add path to domain
         if ($absolute) {
-            $url = $root . $url;
+            $url = $root.$url;
         }
 
         // Add query strings if exists
         if ($parse_query) {
-            $url = $url . '?' . $parse_query;
+            $url = $url.'?'.$parse_query;
         }
 
         return $url;
@@ -152,9 +151,9 @@ class Localizater
      * @param string $key
      * @return string
      */
-    protected function prefix(string $key): string
+    protected function prefix(string $key) : string
     {
-        return !$this->prefixDefault && $key === $this->locale ? '' : $key;
+        return ! $this->prefixDefault && $key === $this->locale ? '' : $key;
     }
 
     /**
@@ -163,9 +162,9 @@ class Localizater
      * @param string $key
      * @return string
      */
-    protected function as(string $key): string
+    protected function as(string $key) : string
     {
-        return !$this->prefixDefaultName && $key === $this->locale ? '' : $key . '.';
+        return ! $this->prefixDefaultName && $key === $this->locale ? '' : $key.'.';
     }
 
     /**

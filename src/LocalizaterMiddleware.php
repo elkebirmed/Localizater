@@ -3,9 +3,9 @@
 namespace Getsupercode\Localizater;
 
 use Closure;
+use Getsupercode\Localizater\Facades\Localizater;
 use Illuminate\Support\Facades\App;
 use Illuminate\Support\Facades\Config;
-use Getsupercode\Localizater\Facades\Localizater;
 
 class LocalizaterMiddleware
 {

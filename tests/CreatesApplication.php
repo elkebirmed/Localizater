@@ -24,7 +24,7 @@ trait CreatesApplication
     protected function getPackageAliases($app)
     {
         return [
-            'Localizater' => 'Getsupercode\Localizater\Facades\Localizater'
+            'Localizater' => 'Getsupercode\Localizater\Facades\Localizater',
         ];
     }
 

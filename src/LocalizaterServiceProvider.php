@@ -14,7 +14,7 @@ class LocalizaterServiceProvider extends ServiceProvider
     public function boot()
     {
         // Publish helpers.
-        require __DIR__ . '/helpers.php';
+        require __DIR__.'/helpers.php';
 
         // Publishing is only necessary when using the CLI.
         if ($this->app->runningInConsole()) {
@@ -29,7 +29,7 @@ class LocalizaterServiceProvider extends ServiceProvider
      */
     public function register()
     {
-        $this->mergeConfigFrom(__DIR__ . '/../config/localizater.php', 'localizater');
+        $this->mergeConfigFrom(__DIR__.'/../config/localizater.php', 'localizater');
 
         // Register the service the package provides.
         $this->app->singleton('localizater', function ($app) {
@@ -56,7 +56,7 @@ class LocalizaterServiceProvider extends ServiceProvider
     {
         // Publishing the configuration file.
         $this->publishes([
-            __DIR__ . '/../config/localizater.php' => config_path('localizater.php'),
+            __DIR__.'/../config/localizater.php' => config_path('localizater.php'),
         ], 'localizater.config');
     }
 }

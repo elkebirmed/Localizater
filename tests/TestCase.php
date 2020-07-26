@@ -2,8 +2,8 @@
 
 namespace Getsupercode\Localizater\Tests;
 
-use Orchestra\Testbench\TestCase as BaseTestCase;
 use Illuminate\Support\Facades\Config;
+use Orchestra\Testbench\TestCase as BaseTestCase;
 
 abstract class TestCase extends BaseTestCase
 {
@@ -12,7 +12,7 @@ abstract class TestCase extends BaseTestCase
     /**
      * Setup before test.
      */
-    public function setUp(): void
+    public function setUp() : void
     {
         parent::setUp();
 
