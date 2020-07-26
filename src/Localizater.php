@@ -151,7 +151,7 @@ class Localizater
      * @param string $key
      * @return string
      */
-    protected function prefix(string $key) : string
+    protected function prefix(string $key): string
     {
         return ! $this->prefixDefault && $key === $this->locale ? '' : $key;
     }
@@ -162,7 +162,7 @@ class Localizater
      * @param string $key
      * @return string
      */
-    protected function as(string $key) : string
+    protected function as(string $key): string
     {
         return ! $this->prefixDefaultName && $key === $this->locale ? '' : $key.'.';
     }
