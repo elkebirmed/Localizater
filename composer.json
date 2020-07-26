@@ -23,9 +23,6 @@
         "mockery/mockery": "^1.1",
         "orchestra/testbench": "~3|~4",
         "sempro/phpunit-pretty-print": "^1.0",
-        "dealerdirect/phpcodesniffer-composer-installer": "^0.7.0",
-        "sirbrillig/phpcs-import-detection": "^1.2",
-        "sirbrillig/phpcs-variable-analysis": "^2.8",
         "friendsofphp/php-cs-fixer": "^2.16"
     },
     "autoload": {
