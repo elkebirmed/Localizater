@@ -45,7 +45,7 @@ class LocalizaterMiddleware
         $segment = $request->segment(1);
 
         // Check if segment is a locale prefix
-        $isLocale = key_exists($segment, $this->locales);
+        $isLocale = array_key_exists($segment, $this->locales);
 
         // Change locale
         if ($isLocale) {

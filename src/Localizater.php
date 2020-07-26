@@ -107,7 +107,7 @@ class Localizater
         }
 
         // Check if locale exists
-        if (key_exists($segments[1], $this->locales)) {
+        if (array_key_exists($segments[1], $this->locales)) {
             unset($segments[1]);
         }
 
