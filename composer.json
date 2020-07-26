@@ -1,5 +1,6 @@
 {
     "name": "getsupercode/localizater",
+    "version": "1.0.0",
     "description": "Laravel package for wrapping routes in multiple locale prefixes",
     "license": "MIT",
     "type": "library",
