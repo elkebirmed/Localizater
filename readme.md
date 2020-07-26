@@ -3,7 +3,7 @@
 [![Latest Version on Packagist][ico-version]][link-packagist]
 [![Total Downloads][ico-downloads]][link-downloads]
 [![Build Status][ico-travis]][link-travis]
-[![StyleCI][ico-styleci]][link-styleci]
+[![StyleCI](https://github.styleci.io/repos/282613224/shield?branch=master)](https://github.styleci.io/repos/282613224?branch=master)
 
 Laravel package for wrapping routes in multiple locale prefixes.
 
@@ -222,10 +222,10 @@ MIT. Please see the [license file](license.md) for more information.
 [ico-version]: https://img.shields.io/packagist/v/getsupercode/localizater.svg?style=flat-square
 [ico-downloads]: https://img.shields.io/packagist/dt/getsupercode/localizater.svg?style=flat-square
 [ico-travis]: https://img.shields.io/travis/getsupercode/localizater/master.svg?style=flat-square
-[ico-styleci]: https://styleci.io/repos/12345678/shield
+[ico-styleci]: https://styleci.io/repos/282613224/shield
 [link-packagist]: https://packagist.org/packages/getsupercode/localizater
 [link-downloads]: https://packagist.org/packages/getsupercode/localizater
 [link-travis]: https://travis-ci.org/getsupercode/localizater
-[link-styleci]: https://styleci.io/repos/12345678
-[link-author]: https://github.com/getsupercode
+[link-styleci]: https://styleci.io/repos/282613224
+[link-author]: https://github.com/elkebirmed
 [link-contributors]: ../../contributors
