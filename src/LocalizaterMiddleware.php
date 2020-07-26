@@ -3,9 +3,9 @@
 namespace Getsupercode\Localizater;
 
 use Closure;
+use Getsupercode\Localizater\Facades\Localizater;
 use Illuminate\Support\Facades\App;
 use Illuminate\Support\Facades\Config;
-use Getsupercode\Localizater\Facades\Localizater;
 
 class LocalizaterMiddleware
 {
@@ -45,7 +45,7 @@ class LocalizaterMiddleware
         $segment = $request->segment(1);
 
         // Check if segment is a locale prefix
-        $isLocale = key_exists($segment, $this->locales);
+        $isLocale = array_key_exists($segment, $this->locales);
 
         // Change locale
         if ($isLocale) {
