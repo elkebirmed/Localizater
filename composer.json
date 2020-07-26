@@ -1,0 +1,51 @@
+{
+    "name": "getsupercode/localizater",
+    "description": "Laravel package for wrapping routes in multiple locale prefixes",
+    "license": "MIT",
+    "type": "library",
+    "authors": [
+        {
+            "name": "Mohamed Elkebir",
+            "email": "elkebir.med@gmail.com",
+            "homepage": "http://getsupercode.com"
+        }
+    ],
+    "homepage": "https://github.com/getsupercode/localizater",
+    "keywords": [
+        "Laravel",
+        "Localizater"
+    ],
+    "require": {
+        "illuminate/support": "~5|~6|~7"
+    },
+    "require-dev": {
+        "phpunit/phpunit": "^8.0",
+        "mockery/mockery": "^1.1",
+        "orchestra/testbench": "~3|~4",
+        "sempro/phpunit-pretty-print": "^1.0"
+    },
+    "autoload": {
+        "psr-4": {
+            "Getsupercode\\Localizater\\": "src/"
+        }
+    },
+    "autoload-dev": {
+        "psr-4": {
+            "Getsupercode\\Localizater\\Tests\\": "tests"
+        }
+    },
+    "scripts": {
+        "test": "vendor/bin/phpunit",
+        "test-coverage": "vendor/bin/phpunit --coverage-html coverage"
+    },
+    "extra": {
+        "laravel": {
+            "providers": [
+                "Getsupercode\\Localizater\\LocalizaterServiceProvider"
+            ],
+            "aliases": {
+                "Localizater": "Getsupercode\\Localizater\\Facades\\Localizater"
+            }
+        }
+    }
+}
