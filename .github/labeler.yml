@@ -2,7 +2,7 @@ testing:
   - tests/*
   
 repo:
-  - ['./*', '.github/*']
+  - any: ['./*', '.github/*']
   
 src:
   - src/*
