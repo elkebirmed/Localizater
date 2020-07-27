@@ -1,0 +1,11 @@
+testing:
+  - tests/*
+  
+repo:
+  - ['./*', '.github/*']
+  
+src:
+  - src/*
+  
+config:
+  - config/*
