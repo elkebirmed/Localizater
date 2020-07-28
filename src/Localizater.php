@@ -78,13 +78,13 @@ class Localizater
     /**
      * Get locale route URL/URI.
      *
-     * @param string $locale
      * @param string|null $route
+     * @param string|null $locale
      * @param array $parameters
      * @param bool $absolute
      * @return string
      */
-    protected function localeRoute($locale, $route = null, $parameters = [], $absolute = true)
+    protected function localeRoute($route = null, $locale = null, $parameters = [], $absolute = true)
     {
         // Get route
         $route = $this->route($route, $parameters, $absolute);
@@ -100,6 +100,9 @@ class Localizater
 
         // Get route URL query strings
         $segments = explode('/', $parse_url);
+
+        // Get wanted locale.
+        $locale = $locale ?: App::getLocale();
 
         // If this is welcome page add the default locale as a segment
         if (! $parse_url) {

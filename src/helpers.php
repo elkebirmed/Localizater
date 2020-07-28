@@ -6,15 +6,15 @@ if (! function_exists('locale_route')) {
     /**
      * Get locale route URL/URI.
      *
-     * @param string $locale
      * @param string|null $route
+     * @param string|null $locale
      * @param array $parameters
      * @param bool $absolute
      * @return string
      */
-    function locale_route($locale, $route = null, $parameters = [], $absolute = true)
+    function locale_route($route = null, $locale = null, $parameters = [], $absolute = true)
     {
-        return Localizater::localeRoute($locale, $route, $parameters, $absolute);
+        return Localizater::localeRoute($route, $locale, $parameters, $absolute);
     }
 }
 
