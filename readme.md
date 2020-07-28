@@ -150,7 +150,7 @@ You can get the current route URL in different locale key:
 ```php
 // Current route URL: example.com
 
-locale_route('fr');
+locale_route(null, 'fr');
 
 // Output: example.com/fr
 ```
@@ -160,7 +160,7 @@ Or a named route:
 ```php
 // Route URL: example.com/fr/home
 
-locale_route('en', 'home');
+locale_route('home', 'en');
 
 // Output: example.com/home
 ```
@@ -168,13 +168,13 @@ locale_route('en', 'home');
 You can pass the same parameters as the [`route()`](https://laravel.com/docs/7.x/helpers#method-route) function after the locale parameter.
 
 ```php
-// locale_route($locale, $route, $parameters, $absolute);
+// locale_route($route, $locale, $parameters, $absolute);
 
 // Current route
-locale_route('fr', null, ['status' => 'active'], true);
+locale_route(null, 'fr', ['status' => 'active'], true);
 
 // Named route
-locale_route('fr', 'home', ['status' => 'active'], true);
+locale_route('home', 'fr', ['status' => 'active'], true);
 ```
 
 ### Get locale language name

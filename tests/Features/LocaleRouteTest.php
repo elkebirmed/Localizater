@@ -17,8 +17,8 @@ class LocaleRouteTest extends TestCase
             });
         });
 
-        $this->assertEquals(locale_route('en', null, [], false), '/');
-        $this->assertEquals(locale_route('fr', null, [], false), '/fr');
+        $this->assertEquals(locale_route(null, 'en', [], false), '/');
+        $this->assertEquals(locale_route(null, 'fr', [], false), '/fr');
     }
 
     /** @test */
@@ -30,9 +30,9 @@ class LocaleRouteTest extends TestCase
             })->name('welcome');
         });
 
-        $this->assertEquals(locale_route('en', 'welcome', [], false), '/');
-        $this->assertEquals(locale_route('fr', 'welcome', [], false), '/fr');
-        $this->assertEquals(locale_route('en', 'fr.welcome', [], false), '/');
-        $this->assertEquals(locale_route('fr', 'fr.welcome', [], false), '/fr');
+        $this->assertEquals(locale_route('welcome', 'en', [], false), '/');
+        $this->assertEquals(locale_route('welcome', 'fr', [], false), '/fr');
+        $this->assertEquals(locale_route('fr.welcome', 'en', [], false), '/');
+        $this->assertEquals(locale_route('fr.welcome', 'fr', [], false), '/fr');
     }
 }
