@@ -72,14 +72,14 @@ If this option is set to true, Default locale route name will be prefixed.
 
 **true:**
 
-| Method | URI  | URL      | Name    |
+| Method | URI  | URI      | Name    |
 | ------ | ---- | -------- | ------- |
 | GET    | HEAD | /page    | en.page |
 | GET    | HEAD | /fr/page | fr.page |
 
 **false:**
 
-| Method | URI  | URL      | Name    |
+| Method | URI  | URI      | Name    |
 | ------ | ---- | -------- | ------- |
 | GET    | HEAD | /page    | page |
 | GET    | HEAD | /fr/page | fr.page |
