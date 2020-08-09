@@ -8,6 +8,12 @@ All notable changes to `Localizater` will be documented in this file.
 
 - Feature: Get HTML direction attribute based on current locale.
 
+## Version 1.1.1
+
+### Fixed
+
+- `readme.md` typos
+
 ## Version 1.1
 
 ### Updated

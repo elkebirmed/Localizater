@@ -15,7 +15,7 @@ Via Composer
 composer require getsupercode/localizater
 ```
 
-To detect and change the locale of the application based on the request automatically, you can add the middleware to your `app/Http/Kernel`:
+To detect and change the locale of the application based on the request automatically, you can add this middleware to your `app/Http/Kernel`:
 
 ```php
 protected $middlewareGroups = [
@@ -28,7 +28,7 @@ protected $middlewareGroups = [
 
 ## Configuration
 
-By default, the application locales are only going to be en and the default locale is not prefixed. If you want to prefix the default locale, please run the following command to publish the configuration file:
+By default, the application locales are only going to be `en` and the default locale is not prefixed. If you want to prefix the default locale, please run the following command to publish the configuration file:
 
 ```bash
 php artisan vendor:publish --provider="Getsupercode\Localizater\LocalizaterServiceProvider" --tag="config"
@@ -80,15 +80,15 @@ If this option is set to true, Default locale route name will be prefixed.
 
 **true:**
 
-| Method | URI  | Name     |
-| ------ | ---- | -------- |
+| Method | URI  | URI      | Name    |
+| ------ | ---- | -------- | ------- |
 | GET    | HEAD | /page    | en.page |
 | GET    | HEAD | /fr/page | fr.page |
 
 **false:**
 
-| Method | URI  | Name     |
-| ------ | ---- | -------- |
+| Method | URI  | URI      | Name    |
+| ------ | ---- | -------- | ------- |
 | GET    | HEAD | /page    | page |
 | GET    | HEAD | /fr/page | fr.page |
 
