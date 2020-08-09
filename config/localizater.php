@@ -15,6 +15,13 @@ return [
     ],
 
     /**
+     * RTL Locales.
+     *
+     * Locales listed here will have special layout direction.
+     */
+    'rtl_locales' => ['ar'],
+
+    /**
      * Prefix default locale or not.
      *
      * true:

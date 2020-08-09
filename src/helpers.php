@@ -30,3 +30,15 @@ if (! function_exists('locale_name')) {
         return Localizater::localeName($locale);
     }
 }
+
+if (! function_exists('locale_dir')) {
+    /**
+     * Get locale direction.
+     *
+     * @return string
+     */
+    function locale_dir($locale = null)
+    {
+        return Localizater::localeDir($locale);
+    }
+}
