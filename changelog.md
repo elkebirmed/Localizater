@@ -2,6 +2,12 @@
 
 All notable changes to `Localizater` will be documented in this file.
 
+## Version 1.3
+
+### Add
+
+- Feature: Get HTML direction attribute based on a specified locale.
+
 ## Version 1.2
 
 ### Add

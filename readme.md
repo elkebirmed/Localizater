@@ -89,7 +89,7 @@ If this option is set to true, Default locale route name will be prefixed.
 
 | Method | URI  | URI      | Name    |
 | ------ | ---- | -------- | ------- |
-| GET    | HEAD | /page    | page |
+| GET    | HEAD | /page    | page    |
 | GET    | HEAD | /fr/page | fr.page |
 
 ## Usage
@@ -216,6 +216,13 @@ locale_dir();
 
 ```html
 <html dir="{{ locale_dir() }}"></html>
+```
+
+You can also get `dir` attribute for a specified locale:
+
+```php
+locale_dir('ar');
+// Output: rtl
 ```
 
 ## Change log

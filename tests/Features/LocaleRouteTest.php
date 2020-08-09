@@ -35,4 +35,34 @@ class LocaleRouteTest extends TestCase
         $this->assertEquals(locale_route('fr.welcome', 'en', [], false), '/');
         $this->assertEquals(locale_route('fr.welcome', 'fr', [], false), '/fr');
     }
+
+    /** @test */
+    public function canGetAbsoluteNamedRoute()
+    {
+        Localizater::group(function () {
+            Route::get('/', function () {
+                return '';
+            })->name('welcome');
+        });
+
+        $this->assertEquals(locale_route('welcome', 'en', [], true), 'http://localhost/');
+        $this->assertEquals(locale_route('welcome', 'fr', [], true), 'http://localhost/fr');
+        $this->assertEquals(locale_route('fr.welcome', 'en', [], true), 'http://localhost/');
+        $this->assertEquals(locale_route('fr.welcome', 'fr', [], true), 'http://localhost/fr');
+    }
+
+    /** @test */
+    public function canGetNamedRouteWithQueryParameters()
+    {
+        Localizater::group(function () {
+            Route::get('/?a=true&b=false', function () {
+                return '';
+            })->name('welcome');
+        });
+
+        $this->assertEquals(locale_route('welcome', 'en', [], false), '/?a=true&b=false');
+        $this->assertEquals(locale_route('welcome', 'fr', [], false), '/fr?a=true&b=false');
+        $this->assertEquals(locale_route('fr.welcome', 'en', [], false), '/?a=true&b=false');
+        $this->assertEquals(locale_route('fr.welcome', 'fr', [], true), 'http://localhost/fr?a=true&b=false');
+    }
 }

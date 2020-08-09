@@ -35,6 +35,7 @@ if (! function_exists('locale_dir')) {
     /**
      * Get locale direction.
      *
+     * @param string|null $locale
      * @return string
      */
     function locale_dir($locale = null)

@@ -19,12 +19,4 @@ class ExtraHelpersTest extends TestCase
 
         $this->assertEquals(Localizater::getLocale(), 'en');
     }
-
-    /** @test */
-    public function canGetLocaleDir()
-    {
-        app()->setlocale('ar');
-
-        $this->assertEquals(Localizater::localeDir(), 'rtl');
-    }
 }

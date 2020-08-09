@@ -8,8 +8,8 @@ use Illuminate\Support\Facades\Facade;
  * @method static \Illuminate\Routing\Router|\Illuminate\Routing\RouteRegistrar group(\Closure|string|array $attributes, \Closure $handle)
  * @method static string localeRoute(string|null $route = null, string|null $locale, array $parameters = [], bool $absolute = true)
  * @method static string localeName(string|null $locale)
+ * @method static string localeDir(string|null $locale)
  * @method static string getLocale()
- * @method static string localeDir()
  *
  * @see Getsupercode\Localizater\Localizater
  */

@@ -92,7 +92,7 @@ class Localizater
      * @param bool $absolute
      * @return string
      */
-    protected function localeRoute($route = null, $locale = null, $parameters = [], $absolute = true)
+    public function localeRoute($route = null, $locale = null, $parameters = [], $absolute = true)
     {
         // Get route
         $route = $this->route($route, $parameters, $absolute);
@@ -151,9 +151,19 @@ class Localizater
      * @param string|null $locale
      * @return string
      */
-    protected function localeName($locale = null)
+    public function localeName($locale = null)
     {
         return Config::get('localizater.locales')[$locale ?: App::getLocale()];
+    }
+
+    /**
+     * Get locale direction.
+     * @param string|null $locale
+     * @return string
+     */
+    public function localeDir($locale = null)
+    {
+        return in_array($locale ?: App::getLocale(), $this->rtl_locales) ? 'rtl' : 'ltr';
     }
 
     /**
@@ -194,16 +204,6 @@ class Localizater
     }
 
     /**
-     * Get locale direction.
-     *
-     * @return string
-     */
-    public function localeDir()
-    {
-        return in_array(App::getLocale(), $this->rtl_locales) ? 'rtl' : 'ltr';
-    }
-
-    /**
      * Call methods dynamically.
      *
      * @param string $name
@@ -218,14 +218,6 @@ class Localizater
             } else {
                 $this->group(...$arguments);
             }
-        }
-
-        if ($name === 'localeRoute') {
-            return $this->localeRoute(...$arguments);
-        }
-
-        if ($name === 'localeName') {
-            return $this->localeName(...$arguments);
         }
 
         if ($name === 'getLocale') {
