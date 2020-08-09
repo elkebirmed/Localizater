@@ -17,6 +17,13 @@ class Localizater
     protected $locales;
 
     /**
+     * RTL locales.
+     *
+     * @var array
+     */
+    protected $rtl_locales;
+
+    /**
      * Default locale.
      *
      * @var string
@@ -50,6 +57,7 @@ class Localizater
     public function __construct()
     {
         $this->locales = Config::get('localizater.locales');
+        $this->rtl_locales = Config::get('localizater.rtl_locales');
         $this->locale = Config::get('app.locale');
         $this->prefixDefault = Config::get('localizater.prefix_default');
         $this->prefixDefaultName = Config::get('localizater.prefix_default_name');
@@ -183,6 +191,16 @@ class Localizater
         return $route
             ? route($route, $parameters, $absolute)
             : URL::full();
+    }
+
+    /**
+     * Get locale direction.
+     *
+     * @return string
+     */
+    public function localeDir()
+    {
+        return in_array(App::getLocale(), $this->rtl_locales) ? 'rtl' : 'ltr';
     }
 
     /**

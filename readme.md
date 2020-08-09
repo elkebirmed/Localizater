@@ -52,6 +52,14 @@ Add supported locales. It's recommended to write the locale value with its nativ
 ]
 ```
 
+### Config: `localizater.rtl_locales`
+
+Add RTL direction locales.
+
+```php
+'rtl_locales' => ['ar']
+```
+
 ### Config: `localizater.prefix_default`
 
 If this option is set to true, Default locale URL will be prefixed.
@@ -190,6 +198,24 @@ locale_name('fr');
 
 locale_name('ar');
 // Output: العربية
+```
+
+### Get HTML `dir` attribute based on current locale
+
+You can get HTML `dir` attribute based on current locale. The package will search for RTL locales in `localizater.rtl_locales` config. If the current locale is listed there, The output will be `rtl` or `ltr` if it's not listed.
+
+```php
+// Current locale is: ar
+locale_dir();
+// Output: rtl
+
+// Current locale is: en
+locale_dir();
+// Output: ltr
+```
+
+```html
+<html dir="{{ locale_dir() }}"></html>
 ```
 
 ## Change log
