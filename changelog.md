@@ -2,6 +2,12 @@
 
 All notable changes to `Localizater` will be documented in this file.
 
+## Version 2.0
+
+### Add
+
+- Support Laravel 8
+
 ## Version 1.3
 
 ### Add
