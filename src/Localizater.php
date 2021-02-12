@@ -98,7 +98,7 @@ class Localizater
     {
         $locale = App::getLocale();
 
-        return $this->localeRoute($locale . '.' . $route, $locale, $parameters, $absolute);
+        return $this->localeRoute($locale.'.'.$route, $locale, $parameters, $absolute);
     }
 
     /**
