@@ -2,6 +2,21 @@
 
 use Getsupercode\Localizater\Facades\Localizater;
 
+if (! function_exists('localized_route')) {
+    /**
+     * Get localized route URL/URI.
+     *
+     * @param string|null $route
+     * @param array $parameters
+     * @param bool $absolute
+     * @return string
+     */
+    function localized_route($route = null, $parameters = [], $absolute = true)
+    {
+        return Localizater::localizedRoute($route, $parameters, $absolute);
+    }
+}
+
 if (! function_exists('locale_route')) {
     /**
      * Get locale route URL/URI.

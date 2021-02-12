@@ -87,6 +87,21 @@ class Localizater
     }
 
     /**
+     * Get localized route URL/URI.
+     *
+     * @param string|null $route
+     * @param array $parameters
+     * @param bool $absolute
+     * @return string
+     */
+    public function localizedRoute($route = null, $parameters = [], $absolute = true)
+    {
+        $locale = App::getLocale();
+
+        return $this->localeRoute($locale . '.' . $route, $locale, $parameters, $absolute);
+    }
+
+    /**
      * Get locale route URL/URI.
      *
      * @param string|null $route
