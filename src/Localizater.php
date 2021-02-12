@@ -73,7 +73,9 @@ class Localizater
      */
     protected function group($attributes, $handle)
     {
+        $currentLocale = app()->getLocale();
         foreach ($this->locales as $key => $value) {
+            app()->setLocale($key);
             $this->router->group([
                 'prefix' => $this->prefix($key),
                 'as' => $this->as($key),
@@ -81,6 +83,7 @@ class Localizater
                 $this->router->group($attributes, $handle);
             });
         }
+        app()->setLocale($currentLocale);
     }
 
     /**
