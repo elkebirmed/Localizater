@@ -98,7 +98,7 @@ class Localizater
     {
         $locale = App::getLocale();
 
-        if($locale !== $this->locale || $this->prefixDefaultName) {
+        if ($locale !== $this->locale || $this->prefixDefaultName) {
             $route = $locale.'.'.$route;
         }
 
