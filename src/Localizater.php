@@ -73,7 +73,9 @@ class Localizater
      */
     protected function group($attributes, $handle)
     {
+        $currentLocale = app()->getLocale();
         foreach ($this->locales as $key => $value) {
+            app()->setLocale($key);
             $this->router->group([
                 'prefix' => $this->prefix($key),
                 'as' => $this->as($key),
@@ -81,6 +83,26 @@ class Localizater
                 $this->router->group($attributes, $handle);
             });
         }
+        app()->setLocale($currentLocale);
+    }
+
+    /**
+     * Get localized route URL/URI.
+     *
+     * @param string|null $route
+     * @param array $parameters
+     * @param bool $absolute
+     * @return string
+     */
+    public function localizedRoute($route = null, $parameters = [], $absolute = true)
+    {
+        $locale = App::getLocale();
+
+        if ($locale !== $this->locale || $this->prefixDefaultName) {
+            $route = $locale.'.'.$route;
+        }
+
+        return $this->localeRoute($route, $locale, $parameters, $absolute);
     }
 
     /**

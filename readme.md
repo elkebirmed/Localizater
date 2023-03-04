@@ -151,6 +151,32 @@ Localizater::group(function () {
 });
 ```
 
+Or as translated routes:
+
+```php
+Localizater::group(function () {
+    Route::group(['middleware' => 'auth'], function () {
+        Route::get(__('home'), function() {
+            return view('home');
+        })->name('home');
+    });
+});
+```
+
+### Get translated route URL
+
+You can get the current route URL in a translated locale key:
+
+You can pass the same parameters as the [`locale_route()`](https://laravel.com/docs/7.x/helpers#method-route) except locale as it is found based on `app()->getLocale()`.
+
+```php
+// Current route URL: example.com/fr
+
+localized_route('home');
+
+// Output: example.com/fr/domicile
+```
+
 ### Get route URL in a specified locale
 
 You can get the current route URL in different locale key:
